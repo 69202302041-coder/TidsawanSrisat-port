@@ -3,23 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tidsawan Srisat - Academic Portfolio</title>
+    <title>Tidsawan Srisat | Academic Portfolio</title>
+    
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts: Plus Jakarta Sans & Noto Sans Thai -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <!-- FontAwesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
     <script>
         tailwind.config = {
             theme: {
                 extend: {
-                    fontFamily: {
-                        sans: ['"Plus Jakarta Sans"', '"Noto Sans Thai"', 'sans-serif'],
-                    },
                     colors: {
                         brand: {
                             50: '#f0f7ff',
@@ -27,250 +18,367 @@
                             500: '#0284c7',
                             800: '#075985',
                             900: '#0c4a6e',
+                            dark: '#0f172a'
                         }
+                    },
+                    fontFamily: {
+                        sans: ['Noto Sans Thai', 'Plus Jakarta Sans', 'sans-serif'],
                     }
                 }
             }
         }
     </script>
-    <style>
-        body {
-            font-family: 'Plus Jakarta Sans', 'Noto Sans Thai', sans-serif;
-        }
-    </style>
+    
+    <!-- Google Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body class="bg-slate-50 text-slate-800 antialiased selection:bg-brand-500 selection:text-white min-h-screen flex flex-col justify-between">
+<body class="bg-slate-50 text-slate-700 font-sans antialiased selection:bg-brand-500 selection:text-white">
 
-    <!-- Top Navigation / Header -->
-    <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200/80">
-        <div class="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
+    <!-- Header / Navigation -->
+    <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200/80 transition-all duration-300">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
             <a href="#" class="font-bold text-xl tracking-tight text-slate-900 hover:text-brand-800 transition">
                 TIDSAWAN<span class="text-brand-500">.</span>
             </a>
-            <a href="mailto:69202302041@scphkk.ac.th" class="inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold text-white bg-slate-900 rounded-full hover:bg-brand-800 transition-all shadow-sm hover:shadow">
-                <i class="fa-regular fa-envelope"></i> ติดต่อ
+            <nav class="hidden md:flex space-x-8 text-sm font-medium">
+                <a href="#about" class="text-slate-600 hover:text-brand-800 transition">เกี่ยวกับฉัน</a>
+                <a href="#education" class="text-slate-600 hover:text-brand-800 transition">การศึกษา</a>
+                <a href="#experience" class="text-slate-600 hover:text-brand-800 transition">ประสบการณ์ & รางวัล</a>
+                <a href="#skills" class="text-slate-600 hover:text-brand-800 transition">ทักษะส่วนตัว</a>
+                <a href="#contact" class="text-slate-600 hover:text-brand-800 transition">ติดต่อ</a>
+            </nav>
+            <a href="#contact" class="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-white bg-brand-800 rounded-full hover:bg-brand-900 transition shadow-sm">
+                <span>ติดต่อฉัน</span>
+                <i class="fa-solid fa-arrow-right text-xs"></i>
             </a>
         </div>
     </header>
 
-    <!-- Main Content Container -->
-    <main class="max-w-5xl mx-auto px-6 py-12 flex-grow">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
-            
-            <!-- Left Sidebar / Profile Info -->
-            <aside class="lg:col-span-4 space-y-8">
-                <!-- Profile Image & Name -->
-                <div class="bg-white p-6 rounded-3xl border border-slate-200/80 shadow-sm text-center lg:text-left">
-                    <div class="relative w-36 h-36 mx-auto lg:mx-0 mb-6 rounded-2xl overflow-hidden ring-4 ring-slate-100 shadow-md">
-                        <img src="https://raw.githubusercontent.com/69202302041-coder/TidsawanSrisat-port/main/%E0%B8%A3%E0%B8%B9%E0%B8%9B%E0%B8%A0%E0%B8%B2%E0%B8%9E.jpg" 
-                             alt="Tidsawan Srisat" 
-                             class="w-full h-full object-cover">
+    <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-20">
+
+        <!-- Hero / Profile Section -->
+        <section id="about" class="pt-6">
+            <div class="bg-white rounded-3xl p-8 md:p-12 shadow-sm border border-slate-100 flex flex-col md:flex-row items-center gap-10">
+                <div class="relative group">
+                    <div class="absolute -inset-1 bg-gradient-to-r from-brand-500 to-brand-800 rounded-full blur opacity-25 group-hover:opacity-50 transition duration-300"></div>
+                    <img src="https://raw.githubusercontent.com/69202302041-coder/TidsawanSrisat-port/main/%E0%B8%A3%E0%B8%B9%E0%B8%9B%E0%B8%A0%E0%B8%B2%E0%B8%9E.jpg" 
+                         alt="Tidsawan Srisat" 
+                         class="relative w-44 h-44 sm:w-52 sm:h-52 rounded-full object-cover border-4 border-white shadow-md">
+                </div>
+                <div class="flex-1 text-center md:text-left space-y-4">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-50 text-brand-800 text-xs font-semibold uppercase tracking-wider">
+                        <span class="w-2 h-2 rounded-full bg-brand-500 animate-pulse"></span>
+                        Academic Portfolio
                     </div>
-                    <h1 class="text-2xl font-bold text-slate-900 tracking-tight">TIDSAWAN SRISAT</h1>
-                    <p class="text-brand-800 font-medium text-sm mt-1">นักศึกษาสาธารณสุขศาสตร์</p>
-                    <p class="text-slate-500 text-xs mt-2 leading-relaxed">
-                        ฉันเป็นคนเป็นมิตรและเข้ากับผู้อื่นได้ดี มีความมุ่งมั่นในการเรียนรู้และการทำงานร่วมกัน
+                    <h1 class="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">
+                        ทิดศวรรณ ศรีสัตย์
+                    </h1>
+                    <p class="text-lg font-medium text-brand-800">
+                        TIDSAWAN SRISAT
                     </p>
-                </div>
-
-                <!-- Contact Info Card -->
-                <div class="bg-white p-6 rounded-3xl border border-slate-200/80 shadow-sm space-y-4 text-sm">
-                    <h2 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">ข้อมูลการติดต่อ</h2>
+                    <p class="text-slate-600 max-w-2xl leading-relaxed">
+                        นักศึกษาปริญญาตรี วิทยาลัยการสาธารณสุขสิรินธร จังหวัดขอนแก่น มีมนุษยสัมพันธ์ดี เข้ากับผู้อื่นได้ง่าย มีความตรงต่อเวลา น่าเชื่อถือ และพร้อมพัฒนาทักษะความเป็นผู้นำและการทำงานเป็นทีมอย่างต่อเนื่อง
+                    </p>
                     
-                    <div class="flex items-start gap-3 text-slate-600">
-                        <i class="fa-solid fa-phone text-brand-500 mt-1"></i>
-                        <span>(+66) 09-3519-7341</span>
+                    <!-- Current Position Badge -->
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-amber-50 text-amber-900 border border-amber-200 text-sm font-medium">
+                        <i class="fa-solid fa-vault text-amber-600"></i>
+                        <span>ปัจจุบันรับหน้าที่: <strong>เหรัญญิกประจำห้องเรียน</strong></span>
                     </div>
 
-                    <div class="flex items-start gap-3 text-slate-600 break-all">
-                        <i class="fa-solid fa-envelope text-brand-500 mt-1"></i>
-                        <span>69202302041@scphkk.ac.th</span>
-                    </div>
-
-                    <div class="flex items-start gap-3 text-slate-600">
-                        <i class="fa-solid fa-location-dot text-brand-500 mt-1"></i>
-                        <span>56 หมู่ 2 ตำบลหนองซิม อำเภอบรบือ จังหวัดมหาสารคาม 44130</span>
+                    <!-- Contact Details Badges -->
+                    <div class="pt-2 flex flex-wrap justify-center md:justify-start gap-4 text-xs font-medium text-slate-600">
+                        <a href="tel:+66935197341" class="flex items-center gap-2 bg-slate-100 hover:bg-slate-200 transition px-3 py-2 rounded-lg">
+                            <i class="fa-solid fa-phone text-brand-800"></i>
+                            (+66) 09-3519-7341
+                        </a>
+                        <a href="mailto:69202302041@scphkk.ac.th" class="flex items-center gap-2 bg-slate-100 hover:bg-slate-200 transition px-3 py-2 rounded-lg">
+                            <i class="fa-solid fa-envelope text-brand-800"></i>
+                            69202302041@scphkk.ac.th
+                        </a>
+                        <span class="flex items-center gap-2 bg-slate-100 px-3 py-2 rounded-lg">
+                            <i class="fa-solid fa-location-dot text-brand-800"></i>
+                            จ.มหาสารคาม 44130
+                        </span>
                     </div>
                 </div>
+            </div>
+        </section>
 
-                <!-- Languages & Skills -->
-                <div class="bg-white p-6 rounded-3xl border border-slate-200/80 shadow-sm space-y-6">
+        <!-- Education Section -->
+        <section id="education" class="space-y-6">
+            <div class="flex items-center gap-3">
+                <div class="p-2 bg-brand-100 rounded-xl text-brand-800">
+                    <i class="fa-solid fa-graduation-cap text-xl"></i>
+                </div>
+                <h2 class="text-2xl font-bold text-slate-900">ประวัติการศึกษา (Education)</h2>
+            </div>
+
+            <div class="grid gap-4 md:grid-cols-2">
+                <!-- University (Current) -->
+                <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm hover:border-brand-500/50 transition group relative overflow-hidden">
+                    <div class="absolute top-0 left-0 w-1.5 h-full bg-brand-800"></div>
+                    <div class="flex justify-between items-start mb-2">
+                        <span class="text-xs font-semibold text-brand-800 bg-brand-50 px-2.5 py-1 rounded-md">2026 - ปัจจุบัน</span>
+                        <span class="text-xs text-emerald-600 font-medium bg-emerald-50 px-2 py-0.5 rounded">กำลังศึกษา</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 group-hover:text-brand-800 transition">ระดับปริญญาตรี</h3>
+                    <p class="text-sm font-medium text-slate-700 mt-1">วิทยาลัยการสาธารณสุขสิรินธร จังหวัดขอนแก่น</p>
+                </div>
+
+                <!-- High School (Upper) -->
+                <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm hover:border-brand-500/50 transition relative overflow-hidden">
+                    <div class="flex justify-between items-start mb-2">
+                        <span class="text-xs font-semibold text-slate-500 bg-slate-100 px-2.5 py-1 rounded-md">2023 - 2025</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900">ระดับมัธยมศึกษาตอนปลาย</h3>
+                    <p class="text-sm font-medium text-slate-700 mt-1">โรงเรียนบรบือวิทยาคาร</p>
+                </div>
+
+                <!-- High School (Lower) -->
+                <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm hover:border-brand-500/50 transition relative overflow-hidden">
+                    <div class="flex justify-between items-start mb-2">
+                        <span class="text-xs font-semibold text-slate-500 bg-slate-100 px-2.5 py-1 rounded-md">2020 - 2022</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900">ระดับมัธยมศึกษาตอนต้น</h3>
+                    <p class="text-sm font-medium text-slate-700 mt-1">โรงเรียนบรบือวิทยาคาร</p>
+                </div>
+
+                <!-- Primary School -->
+                <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm hover:border-brand-500/50 transition relative overflow-hidden">
+                    <div class="flex justify-between items-start mb-2">
+                        <span class="text-xs font-semibold text-slate-500 bg-slate-100 px-2.5 py-1 rounded-md">2014 - 2019</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900">ระดับประถมศึกษา</h3>
+                    <p class="text-sm font-medium text-slate-700 mt-1">โรงเรียนอนุบาลกิตติยา</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience & Achievements Timeline -->
+        <section id="experience" class="space-y-6">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                    <div class="p-2 bg-brand-100 rounded-xl text-brand-800">
+                        <i class="fa-solid fa-trophy text-xl"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold text-slate-900">ประสบการณ์ ผลงาน และรางวัล (Experience & Awards)</h2>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-100 shadow-sm">
+                <div class="relative border-l-2 border-slate-200 ml-3 md:ml-6 space-y-8 my-2">
+                    
+                    <!-- Item 2026 / Current -->
+                    <div class="relative pl-6 md:pl-8 group">
+                        <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-brand-500 border-4 border-white shadow-sm"></div>
+                        <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4 mb-1">
+                            <span class="text-xs font-bold text-brand-800 bg-brand-50 px-2.5 py-0.5 rounded-full w-fit">2026 - ปัจจุบัน</span>
+                            <h3 class="text-base font-bold text-slate-900">ปฏิบัติหน้าที่เหรัญญิกประจำห้องเรียน</h3>
+                        </div>
+                        <p class="text-sm text-slate-600">รับผิดชอบการดูแล จัดการ และสรุปบัญชีการเงินของห้องเรียน มีความละเอียดรอบคอบ และได้รับความไว้วางใจจากเพื่อนร่วมชั้น</p>
+                    </div>
+
+                    <!-- Item 2025 -->
+                    <div class="relative pl-6 md:pl-8 group">
+                        <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-slate-300 group-hover:bg-brand-500 transition border-4 border-white"></div>
+                        <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4 mb-1">
+                            <span class="text-xs font-bold text-slate-600 bg-slate-100 px-2.5 py-0.5 rounded-full w-fit">2025</span>
+                            <h3 class="text-base font-bold text-slate-900">รางวัลเหรียญเงิน การแข่งขันโครงงานห้องเรียนพิเศษ</h3>
+                        </div>
+                        <p class="text-sm text-slate-600">ระดับภาคตะวันออกเฉียงเหนือตอนบน (ปี 2025)</p>
+                    </div>
+
+                    <!-- Item 2025 -->
+                    <div class="relative pl-6 md:pl-8 group">
+                        <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-slate-300 group-hover:bg-brand-500 transition border-4 border-white"></div>
+                        <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4 mb-1">
+                            <span class="text-xs font-bold text-slate-600 bg-slate-100 px-2.5 py-0.5 rounded-full w-fit">2025</span>
+                            <h3 class="text-base font-bold text-slate-900">รางวัลเหรียญทองแดง การแข่งขันฟิสิกส์เชิงกลยุทธ์</h3>
+                        </div>
+                        <p class="text-sm text-slate-600">ประจำปีการศึกษา 2025</p>
+                    </div>
+
+                    <!-- Item 2024 -->
+                    <div class="relative pl-6 md:pl-8 group">
+                        <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-slate-300 group-hover:bg-brand-500 transition border-4 border-white"></div>
+                        <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4 mb-1">
+                            <span class="text-xs font-bold text-slate-600 bg-slate-100 px-2.5 py-0.5 rounded-full w-fit">2024</span>
+                            <h3 class="text-base font-bold text-slate-900">รางวัลเหรียญทอง และรองชนะเลิศอันดับ 1 การแข่งขันแอโรบิกแดนซ์</h3>
+                        </div>
+                        <p class="text-sm text-slate-600">งานศิลปหัตถกรรมนักเรียน (ปี 2024)</p>
+                    </div>
+
+                    <!-- Item 2024 -->
+                    <div class="relative pl-6 md:pl-8 group">
+                        <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-slate-300 group-hover:bg-brand-500 transition border-4 border-white"></div>
+                        <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4 mb-1">
+                            <span class="text-xs font-bold text-slate-600 bg-slate-100 px-2.5 py-0.5 rounded-full w-fit">2024</span>
+                            <h3 class="text-base font-bold text-slate-900">รางวัลระดับชาติ งานมหกรรมส่งเสริมศีลธรรมและกิจกรรมทางพระพุทธศาสนา</h3>
+                        </div>
+                        <p class="text-sm text-slate-600">เฉลิมพระเกียรติฯ ครั้งที่ 6 (ปี 2024)</p>
+                    </div>
+
+                    <!-- Item 2024 -->
+                    <div class="relative pl-6 md:pl-8 group">
+                        <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-slate-300 group-hover:bg-brand-500 transition border-4 border-white"></div>
+                        <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4 mb-1">
+                            <span class="text-xs font-bold text-slate-600 bg-slate-100 px-2.5 py-0.5 rounded-full w-fit">2024</span>
+                            <h3 class="text-base font-bold text-slate-900">ผู้ช่วยวิทยากร ค่ายวิชาการ STEM</h3>
+                        </div>
+                        <p class="text-sm text-slate-600">ณ โรงเรียนวังไฮวังทอง (ปี 2024)</p>
+                    </div>
+
+                    <!-- Item 2024 -->
+                    <div class="relative pl-6 md:pl-8 group">
+                        <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-slate-300 group-hover:bg-brand-500 transition border-4 border-white"></div>
+                        <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4 mb-1">
+                            <span class="text-xs font-bold text-slate-600 bg-slate-100 px-2.5 py-0.5 rounded-full w-fit">2024</span>
+                            <h3 class="text-base font-bold text-slate-900">เข้าร่วมค่ายแนะแนวอาชีพ สารคาม-จามจุรี & สังเกตการณ์แข่งฟิสิกส์</h3>
+                        </div>
+                        <p class="text-sm text-slate-600">ผู้เข้าร่วมค่ายแนะแนวอาชีพ สารคาม-จามจุรี และผู้สังเกตการณ์การแข่งขันฟิสิกส์เชิงกลยุทธ์ (ปี 2024)</p>
+                    </div>
+
+                    <!-- Item 2023 -->
+                    <div class="relative pl-6 md:pl-8 group">
+                        <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-slate-300 group-hover:bg-brand-500 transition border-4 border-white"></div>
+                        <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4 mb-1">
+                            <span class="text-xs font-bold text-slate-600 bg-slate-100 px-2.5 py-0.5 rounded-full w-fit">2023</span>
+                            <h3 class="text-base font-bold text-slate-900">รางวัลเหรียญทอง และรองชนะเลิศอันดับ 2 กิจกรรมเพื่อนที่ปรึกษา (Peer Counseling)</h3>
+                        </div>
+                        <p class="text-sm text-slate-600">งานศิลปหัตถกรรมนักเรียน (ปี 2023)</p>
+                    </div>
+
+                    <!-- Item 2022 -->
+                    <div class="relative pl-6 md:pl-8 group">
+                        <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-slate-300 group-hover:bg-brand-500 transition border-4 border-white"></div>
+                        <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4 mb-1">
+                            <span class="text-xs font-bold text-slate-600 bg-slate-100 px-2.5 py-0.5 rounded-full w-fit">2022</span>
+                            <h3 class="text-base font-bold text-slate-900">รางวัลเหรียญทองแดง การแข่งขันอัจฉริยภาพทางคณิตศาสตร์</h3>
+                        </div>
+                        <p class="text-sm text-slate-600">งานศิลปหัตถกรรมนักเรียน (ปี 2022)</p>
+                    </div>
+
+                    <!-- Item 2020-2024 -->
+                    <div class="relative pl-6 md:pl-8 group">
+                        <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-slate-300 group-hover:bg-brand-500 transition border-4 border-white"></div>
+                        <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4 mb-1">
+                            <span class="text-xs font-bold text-slate-600 bg-slate-100 px-2.5 py-0.5 rounded-full w-fit">2020 - 2024</span>
+                            <h3 class="text-base font-bold text-slate-900">เข้าร่วมโครงการพัฒนาทักษะปฏิบัติการทางวิทยาศาสตร์</h3>
+                        </div>
+                        <p class="text-sm text-slate-600">เข้าร่วมกิจกรรมอบรมและพัฒนาทักษะทางวิทยาศาสตร์อย่างต่อเนื่องตลอดช่วงการศึกษา</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills & Qualifications Section -->
+        <section id="skills" class="grid md:grid-cols-2 gap-8">
+            <!-- Personal Attributes -->
+            <div class="space-y-4">
+                <div class="flex items-center gap-3">
+                    <div class="p-2 bg-brand-100 rounded-xl text-brand-800">
+                        <i class="fa-solid fa-user-check text-xl"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold text-slate-900">คุณสมบัติส่วนบุคคล</h2>
+                </div>
+
+                <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm space-y-3">
+                    <div class="flex items-start gap-3">
+                        <i class="fa-solid fa-circle-check text-brand-500 mt-1"></i>
+                        <div>
+                            <h4 class="font-semibold text-slate-900">การทำงานร่วมกับผู้อื่น (Teamwork)</h4>
+                            <p class="text-sm text-slate-600">ทำงานได้ดีในสภาพแวดล้อมแบบทีม และเข้ากับผู้อื่นได้ง่าย</p>
+                        </div>
+                    </div>
+                    <hr class="border-slate-100">
+                    <div class="flex items-start gap-3">
+                        <i class="fa-solid fa-circle-check text-brand-500 mt-1"></i>
+                        <div>
+                            <h4 class="font-semibold text-slate-900">ความรับผิดชอบและความน่าเชื่อถือ</h4>
+                            <p class="text-sm text-slate-600">ตรงต่อเวลา น่าเชื่อถือ สามารถจัดการงานด้านเอกสารและการเงินได้เป็นอย่างดี</p>
+                        </div>
+                    </div>
+                    <hr class="border-slate-100">
+                    <div class="flex items-start gap-3">
+                        <i class="fa-solid fa-circle-check text-brand-500 mt-1"></i>
+                        <div>
+                            <h4 class="font-semibold text-slate-900">ทักษะความเป็นผู้นำ</h4>
+                            <p class="text-sm text-slate-600">มีทักษะความเป็นผู้นำที่แข็งแกร่ง และกล้าตัดสินใจในสถานการณ์สำคัญ</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Language Skills -->
+            <div class="space-y-4">
+                <div class="flex items-center gap-3">
+                    <div class="p-2 bg-brand-100 rounded-xl text-brand-800">
+                        <i class="fa-solid fa-language text-xl"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold text-slate-900">ทักษะด้านภาษา (Languages)</h2>
+                </div>
+
+                <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm space-y-6">
                     <div>
-                        <h2 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-3">ทักษะทางภาษา</h2>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="px-3 py-1 bg-slate-100 text-slate-700 font-medium rounded-lg text-xs">English</span>
-                            <span class="px-3 py-1 bg-slate-100 text-slate-700 font-medium rounded-lg text-xs">Chinese</span>
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="font-semibold text-slate-800">ภาษาอังกฤษ (English)</span>
+                            <span class="text-xs text-brand-800 font-medium">ระดับปานกลาง</span>
+                        </div>
+                        <div class="w-full bg-slate-100 rounded-full h-2.5">
+                            <div class="bg-brand-800 h-2.5 rounded-full" style="width: 70%"></div>
                         </div>
                     </div>
 
                     <div>
-                        <h2 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-3">คุณสมบัติส่วนบุคคล</h2>
-                        <ul class="space-y-2 text-xs text-slate-600">
-                            <li class="flex items-center gap-2">
-                                <i class="fa-solid fa-circle-check text-emerald-500"></i>
-                                ทำงานได้ดีในสภาพแวดล้อมแบบทีม
-                            </li>
-                            <li class="flex items-center gap-2">
-                                <i class="fa-solid fa-circle-check text-emerald-500"></i>
-                                ตรงต่อเวลาและน่าเชื่อถือ
-                            </li>
-                            <li class="flex items-center gap-2">
-                                <i class="fa-solid fa-circle-check text-emerald-500"></i>
-                                มีทักษะความเป็นผู้นำที่แข็งแกร่ง
-                            </li>
-                        </ul>
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="font-semibold text-slate-800">ภาษาจีน (Chinese)</span>
+                            <span class="text-xs text-brand-800 font-medium">ระดับพื้นฐาน</span>
+                        </div>
+                        <div class="w-full bg-slate-100 rounded-full h-2.5">
+                            <div class="bg-brand-500 h-2.5 rounded-full" style="width: 45%"></div>
+                        </div>
                     </div>
                 </div>
-            </aside>
+            </div>
+        </section>
 
-            <!-- Right Main Area / Education & Experience -->
-            <section class="lg:col-span-8 space-y-12">
+        <!-- Contact Section -->
+        <section id="contact" class="bg-brand-900 text-white rounded-3xl p-8 md:p-12 shadow-xl relative overflow-hidden">
+            <div class="absolute -right-10 -bottom-10 w-60 h-60 bg-brand-800 rounded-full blur-2xl opacity-50"></div>
+            
+            <div class="relative z-10 max-w-2xl mx-auto text-center space-y-6">
+                <h2 class="text-3xl font-bold tracking-tight">สนใจร่วมงานหรือติดต่อสอบถาม</h2>
+                <p class="text-slate-300 font-light">
+                    สามารถติดต่อข้าพเจ้าได้ผ่านช่องทางโทรศัพท์ หรืออีเมลเพื่อสอบถามข้อมูลเพิ่มเติมเกี่ยวกับประวัติการศึกษาและผลงาน
+                </p>
                 
-                <!-- Current Position Badge Section -->
-                <div class="bg-gradient-to-r from-brand-900 to-brand-800 p-6 rounded-3xl text-white shadow-lg flex items-center justify-between">
-                    <div>
-                        <span class="inline-block px-3 py-1 bg-white/20 text-white rounded-full text-xs font-medium mb-2">ตำแหน่งปัจจุบัน</span>
-                        <h3 class="text-xl font-bold">เหรัญญิกห้อง</h3>
-                        <p class="text-brand-100 text-xs mt-1">รับผิดชอบการจัดการและดูแลบัญชีการเงินส่วนกลางของห้องเรียน</p>
-                    </div>
-                    <div class="text-3xl text-white/40">
-                        <i class="fa-solid fa-wallet"></i>
-                    </div>
+                <div class="pt-4 flex flex-col sm:flex-row justify-center items-center gap-4">
+                    <a href="tel:+66935197341" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-6 py-3 rounded-full bg-white text-slate-900 font-semibold hover:bg-slate-100 transition shadow-md">
+                        <i class="fa-solid fa-phone text-brand-800"></i>
+                        09-3519-7341
+                    </a>
+                    <a href="mailto:69202302041@scphkk.ac.th" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-6 py-3 rounded-full bg-brand-800 text-white font-semibold hover:bg-brand-800/80 border border-brand-500/30 transition">
+                        <i class="fa-solid fa-envelope"></i>
+                        ส่งอีเมลหาข้าพเจ้า
+                    </a>
                 </div>
+            </div>
+        </section>
 
-                <!-- Education Section -->
-                <div>
-                    <div class="flex items-center gap-3 mb-6">
-                        <div class="w-8 h-8 rounded-full bg-brand-100 text-brand-800 flex items-center justify-center font-bold text-sm">
-                            <i class="fa-solid fa-graduation-cap"></i>
-                        </div>
-                        <h2 class="text-xl font-bold text-slate-900">ประวัติการศึกษา</h2>
-                    </div>
-
-                    <div class="relative border-l-2 border-slate-200 ml-4 space-y-8 pl-6">
-                        <!-- Level 4 -->
-                        <div class="relative group">
-                            <div class="absolute -left-[31px] top-1.5 w-3.5 h-3.5 rounded-full bg-brand-500 ring-4 ring-white"></div>
-                            <span class="text-xs font-semibold text-brand-800 bg-brand-50 px-2.5 py-1 rounded-md">ปี 2026 - ปัจจุบัน</span>
-                            <h3 class="text-base font-bold text-slate-900 mt-2">ระดับปริญญาตรี</h3>
-                            <p class="text-sm text-slate-600">วิทยาลัยการสาธารณสุขสิรินธร จังหวัดขอนแก่น</p>
-                        </div>
-
-                        <!-- Level 3 -->
-                        <div class="relative group">
-                            <div class="absolute -left-[31px] top-1.5 w-3.5 h-3.5 rounded-full bg-slate-300 ring-4 ring-white"></div>
-                            <span class="text-xs font-semibold text-slate-500 bg-slate-100 px-2.5 py-1 rounded-md">ปี 2023 - 2025</span>
-                            <h3 class="text-base font-bold text-slate-900 mt-2">โรงเรียนมัธยมศึกษาตอนปลาย</h3>
-                            <p class="text-sm text-slate-600">โรงเรียนบรบือวิทยาคาร</p>
-                        </div>
-
-                        <!-- Level 2 -->
-                        <div class="relative group">
-                            <div class="absolute -left-[31px] top-1.5 w-3.5 h-3.5 rounded-full bg-slate-300 ring-4 ring-white"></div>
-                            <span class="text-xs font-semibold text-slate-500 bg-slate-100 px-2.5 py-1 rounded-md">ปี 2020 - 2022</span>
-                            <h3 class="text-base font-bold text-slate-900 mt-2">โรงเรียนมัธยมศึกษาตอนต้น</h3>
-                            <p class="text-sm text-slate-600">โรงเรียนบรบือวิทยาคาร</p>
-                        </div>
-
-                        <!-- Level 1 -->
-                        <div class="relative group">
-                            <div class="absolute -left-[31px] top-1.5 w-3.5 h-3.5 rounded-full bg-slate-300 ring-4 ring-white"></div>
-                            <span class="text-xs font-semibold text-slate-500 bg-slate-100 px-2.5 py-1 rounded-md">2014 - 2019</span>
-                            <h3 class="text-base font-bold text-slate-900 mt-2">โรงเรียนประถมศึกษา</h3>
-                            <p class="text-sm text-slate-600">โรงเรียนอนุบาลกิตติยา</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Experience Section -->
-                <div>
-                    <div class="flex items-center gap-3 mb-6">
-                        <div class="w-8 h-8 rounded-full bg-brand-100 text-brand-800 flex items-center justify-center font-bold text-sm">
-                            <i class="fa-solid fa-briefcase"></i>
-                        </div>
-                        <h2 class="text-xl font-bold text-slate-900">ประสบการณ์และผลงาน (Experience)</h2>
-                    </div>
-
-                    <div class="grid grid-cols-1 gap-4">
-                        
-                        <!-- Item 1 -->
-                        <div class="bg-white p-5 rounded-2xl border border-slate-200/80 shadow-sm hover:border-brand-500/50 transition">
-                            <div class="flex justify-between items-start mb-2">
-                                <h3 class="font-bold text-slate-900 text-sm">ได้รับรางวัลเหรียญเงินการแข่งขันโครงงานห้องเรียนพิเศษระดับภาคตะวันออกเฉียงเหนือตอนบน</h3>
-                                <span class="text-xs font-semibold px-2 py-0.5 rounded bg-amber-50 text-amber-700">ปี 2025</span>
-                            </div>
-                        </div>
-
-                        <!-- Item 2 -->
-                        <div class="bg-white p-5 rounded-2xl border border-slate-200/80 shadow-sm hover:border-brand-500/50 transition">
-                            <div class="flex justify-between items-start mb-2">
-                                <h3 class="font-bold text-slate-900 text-sm">ได้รับรางวัลเหรียญทองแดงการแข่งขันฟิสิกส์เชิงกลยุทธ์</h3>
-                                <span class="text-xs font-semibold px-2 py-0.5 rounded bg-amber-50 text-amber-700">ปี 2025</span>
-                            </div>
-                        </div>
-
-                        <!-- Item 3 -->
-                        <div class="bg-white p-5 rounded-2xl border border-slate-200/80 shadow-sm hover:border-brand-500/50 transition">
-                            <div class="flex justify-between items-start mb-2">
-                                <h3 class="font-bold text-slate-900 text-sm">ได้รับรางวัลระดับชาติ ในงานมหกรรมส่งเสริมศีลธรรมและกิจกรรมทางพระพุทธศาสนาเฉลิมพระเกียรติฯ ครั้งที่ 6</h3>
-                                <span class="text-xs font-semibold px-2 py-0.5 rounded bg-slate-100 text-slate-600">ปี 2024</span>
-                            </div>
-                        </div>
-
-                        <!-- Item 4 -->
-                        <div class="bg-white p-5 rounded-2xl border border-slate-200/80 shadow-sm hover:border-brand-500/50 transition">
-                            <div class="flex justify-between items-start mb-2">
-                                <h3 class="font-bold text-slate-900 text-sm">ได้รับรางวัลเหรียญทองและรางวัลรองชนะเลิศอันดับ 1 การแข่งขันแอโรบิกแดนซ์ ในงานศิลปหัตถกรรมนักเรียน</h3>
-                                <span class="text-xs font-semibold px-2 py-0.5 rounded bg-slate-100 text-slate-600">ปี 2024</span>
-                            </div>
-                        </div>
-
-                        <!-- Item 5 -->
-                        <div class="bg-white p-5 rounded-2xl border border-slate-200/80 shadow-sm hover:border-brand-500/50 transition">
-                            <div class="flex justify-between items-start mb-2">
-                                <h3 class="font-bold text-slate-900 text-sm">ผู้ช่วยวิทยากร ค่ายวิชาการ STEM ณ โรงเรียนวังไฮวังทอง</h3>
-                                <span class="text-xs font-semibold px-2 py-0.5 rounded bg-slate-100 text-slate-600">ปี 2024</span>
-                            </div>
-                        </div>
-
-                        <!-- Item 6 -->
-                        <div class="bg-white p-5 rounded-2xl border border-slate-200/80 shadow-sm hover:border-brand-500/50 transition">
-                            <div class="flex justify-between items-start mb-2">
-                                <h3 class="font-bold text-slate-900 text-sm">ผู้เข้าร่วมค่ายแนะแนวอาชีพ สารคาม-จามจุรี & ผู้สังเกตการณ์การแข่งขันฟิสิกส์เชิงกลยุทธ์</h3>
-                                <span class="text-xs font-semibold px-2 py-0.5 rounded bg-slate-100 text-slate-600">ปี 2024</span>
-                            </div>
-                        </div>
-
-                        <!-- Item 7 -->
-                        <div class="bg-white p-5 rounded-2xl border border-slate-200/80 shadow-sm hover:border-brand-500/50 transition">
-                            <div class="flex justify-between items-start mb-2">
-                                <h3 class="font-bold text-slate-900 text-sm">เข้าร่วมโครงการพัฒนาทักษะปฏิบัติการทางวิทยาศาสตร์</h3>
-                                <span class="text-xs font-semibold px-2 py-0.5 rounded bg-slate-100 text-slate-600">ปี 2020 - 2024</span>
-                            </div>
-                        </div>
-
-                        <!-- Item 8 -->
-                        <div class="bg-white p-5 rounded-2xl border border-slate-200/80 shadow-sm hover:border-brand-500/50 transition">
-                            <div class="flex justify-between items-start mb-2">
-                                <h3 class="font-bold text-slate-900 text-sm">ได้รับรางวัลเหรียญทองและรางวัลรองชนะเลิศอันดับ 2 การแข่งขันกิจกรรมนักเรียนเพื่อนที่ปรึกษา (Peer Counseling) งานศิลปหัตถกรรมนักเรียน</h3>
-                                <span class="text-xs font-semibold px-2 py-0.5 rounded bg-slate-100 text-slate-600">ปี 2023</span>
-                            </div>
-                        </div>
-
-                        <!-- Item 9 -->
-                        <div class="bg-white p-5 rounded-2xl border border-slate-200/80 shadow-sm hover:border-brand-500/50 transition">
-                            <div class="flex justify-between items-start mb-2">
-                                <h3 class="font-bold text-slate-900 text-sm">ได้รับรางวัลเหรียญทองแดง การแข่งขันอัจฉริยภาพทางคณิตศาสตร์ ในงานศิลปหัตถกรรมนักเรียน</h3>
-                                <span class="text-xs font-semibold px-2 py-0.5 rounded bg-slate-100 text-slate-600">ปี 2022</span>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-            </section>
-        </div>
     </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-200 bg-white py-8">
+        <div class="max-w-6xl mx-auto px-4 text-center text-sm text-slate-500">
+            <p>© 2026 Tidsawan Srisat. All rights reserved.</p>
+            <p class="text-xs text-slate-400 mt-1">Designed with Tailwind CSS for GitHub Pages</p>
+        </div>
+    </footer>
 
 </body>
 </html>
